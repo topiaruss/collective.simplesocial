@@ -40,7 +40,7 @@ class FacebookSettingsAdapter(object):
     def __init__(self, context):
         pprop = getToolByName(context, 'portal_properties')
         self.context = pprop.fb_properties
-        self.encoding = pprop.site_properties.default_charset
+        self.encoding = getattr(pprop.site_properties, 'default_charset', 'utf-8')
         
     app_id = PropertySheetProperty(IFacebookSettings['app_id'], 'string')
     post_to_page_available = PropertySheetProperty(IFacebookSettings['post_to_page_available'], 'boolean')
