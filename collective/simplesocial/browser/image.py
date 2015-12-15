@@ -20,6 +20,7 @@ class DefaultFacebookImage(object):
         """
         Returns the default image, in this case a scaled version of the logo.
         """
+        return None
         
         portal = getSite()
         base_props = portal.restrictedTraverse('base_properties')
